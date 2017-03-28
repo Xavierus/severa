@@ -1,0 +1,19 @@
+php:
+  container_name: php-test
+  build: .
+  links:
+    - db
+  volumes:
+    - ./src:/src
+    - ./datafiles:/datafiles
+
+db:
+  container_name: mysql-test
+  image: mysql
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: demo
+  volumes:
+    - ./migrations:/docker-entrypoint-initdb.d
