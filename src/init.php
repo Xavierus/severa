@@ -47,7 +47,7 @@ EOL;
      */
     public function get(): array
     {
-        $stmt = $this->connection->prepare("SELECT * FROM `test`");//" WHERE result = :resultNormal OR result = :resultSuccess");
+        $stmt = $this->connection->prepare("SELECT * FROM `test` WHERE result = :resultNormal OR result = :resultSuccess");
         $resultNormal = 'normal';
         $resultSuccess = 'success';
         $stmt->bindParam('resultNormal', $resultNormal);
