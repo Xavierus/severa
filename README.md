@@ -15,3 +15,6 @@ LEFT JOIN books_authors ON books_authors.book_id = books.id \
 GROUP BY books_authors.book_id, books.title \
 HAVING authors_count > 2
 ORDER BY NULL;'"
+
+**4 Task (linked list)**
+Execute "docker-compose run php php /src/linked_list_inversion.php"
